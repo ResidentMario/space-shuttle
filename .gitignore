@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+.idea/
+concept_insight_credentials.json
+token.json
+.DS_Store
+
+# Temporary files
+booster_temperature_visualization_compex_attempt.html
+Shuttle Booster Data.json
