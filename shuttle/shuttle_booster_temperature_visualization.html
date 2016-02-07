@@ -29,9 +29,11 @@
         frame.append("g");
 
 //        frame.select("img").data(temperature_data).enter().append("img")
-        frame.select("g").data(dataset).enter().append("img")
+        frame.select("g").data(dataset).enter().append("g").append("img")
                 .attr("src", "Shuttle Booster Diagram Simplified.svg")
                 .attr("height", "150px")
+                .style("position", "absolute")
+                .style("right", function(d) { return d[3]; } )
                 .style("background-color", "red");
     });
 
