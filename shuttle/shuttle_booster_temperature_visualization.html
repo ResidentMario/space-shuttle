@@ -17,14 +17,23 @@
     // placement method, which I do not have the time or patience to do. It might be easier to hand-recreate the chart
     // in a vector drawing program, though this comes with its own challenges (generating the axes, etc.).
 
-    var temperature_data = [53,57,58,63,66,67,67,67,68,69,70,70,70,72,73,75,75,76,78,79,81];
-    var severity_data = [11,4,4,2,0,0,0,0,0,0,4,0,4,0,0,0,4,0,0,0,0];
-    var frame = d3.select("body");
+    d3.json("data.json", function(error, dataset) {
+        if (error) throw error;
 
-    frame.select("img").data(temperature_data).enter().append("img")
-            .attr("src", "Shuttle Booster Diagram Simplified.svg")
-            .attr("height", "150px")
-            .style("background-color", "red");
+        console.log(dataset);
+
+//        var temperature_data = [53, 57, 58, 63, 66, 67, 67, 67, 68, 69, 70, 70, 70, 72, 73, 75, 75, 76, 78, 79, 81];
+//        var severity_data = [11, 4, 4, 2, 0, 0, 0, 0, 0, 0, 4, 0, 4, 0, 0, 0, 4, 0, 0, 0, 0];
+        var frame = d3.select("body");
+
+        frame.append("g");
+
+//        frame.select("img").data(temperature_data).enter().append("img")
+        frame.select("g").data(dataset).enter().append("img")
+                .attr("src", "Shuttle Booster Diagram Simplified.svg")
+                .attr("height", "150px")
+                .style("background-color", "red");
+    });
 
 </script>
 
